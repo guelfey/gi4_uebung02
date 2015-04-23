@@ -1,19 +1,20 @@
 CC = gcc
-CFLAGS = -g -O
+CFLAGS = -Wall -g
+LDFLAGS =
 
 editor : main.o input.o
-  $(CC) main.o input.o -o editor
+	$(CC) $(LDFLAGS) main.o input.o -o editor
 
 main.o : main.c utils.h stdio.h string.h stdlib.h
-  $(CC) -o main.o -c main.c
+	$(CC) $(CFLAGS) -o main.o -c main.c
 
 input.o : input.c stdio.h string.h stdlib.h
-  $(CC) -o input.o -c input.c
+	$(CC) $(CFLAGS) -o input.o -c input.c
 
 utils.h : types.h defs.h
 
 clean:
-  rm -f *.o 
+	rm -f *.o editor
 
-install: main.o input.o
-  $(CC) main.o input.o -o /usr/bin/editor
+install: editor
+	install -m 555 editor /usr/bin

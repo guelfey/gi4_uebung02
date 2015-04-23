@@ -1,0 +1,20 @@
+## Datentypen, Speichermodell
+
+1.)
+"Hello World!" wäre in Hexadezimal nach ASCII:
+
+48	niedrige Speicheradresse
+65					|
+6C					|
+6C					v
+6F
+20
+57
+6F
+72
+6C
+64
+21
+0		hohe Speicheradresse
+
+2.)

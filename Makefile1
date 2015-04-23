@@ -1,0 +1,12 @@
+CC=gcc
+CFLAGS= -Wall -g
+LDFLAGS=
+DATEIEN =main.c input.c
+
+depend: 
+	gcc -MM $(DATEIEN) utils.h > dependency1
+
+include <dependency>
+
+editor: $(DATEIEN:.c=.o)
+	$(CC) $(LDFLAGS) $(DATEIEN:.c=.o) -o editor
