@@ -1,20 +1,60 @@
 ## Datentypen, Speichermodell
 
-1.)
-"Hello World!" wäre in Hexadezimal nach ASCII:
+1. "Hello World!" wäre in Hexadezimal nach ASCII:
 
-48	niedrige Speicheradresse
-65					|
-6C					|
-6C					v
-6F
-20
-57
-6F
-72
-6C
-64
-21
-0		hohe Speicheradresse
+	48	niedrige Speicheradresse
+	65					|
+	6C					|
+	6C					v
+	6F
+	20
+	57
+	6F
+	72
+	6C
+	64
+	21
+	00  hohe Speicheradresse
 
-2.)
+2. Big Endian:
+
+	DE  niedrige Speicheradresse
+	AD                  |
+	BE                  |
+	EF                  v
+	40
+	01
+	07  hohe Speicheradresse
+
+Little Endian:
+
+	EF  niedrige Speicheradresse
+	BE                  |
+	AD                  |
+	DE                  v
+	01
+	40
+	07  hohe Speicheradresse
+
+3.
+
+	00: 07 // char index = 7;
+	01: ?? // padding
+	02: ??
+	03: ??
+	04: 00 // int avalue = -512;
+	05: FE
+	06: FF
+	07: FF
+	08: 7F // short shortvalue = 127;
+	09: 00
+	0A: 20 // char space = 32;
+	0B: ?? // padding
+	0C: 23 // short sarray[0] = 0x123;
+	0D: 01
+	0E: 56 // short sarray[1] = 0x456;
+	0F: 04
+	10: 00 // int anothervalue = 4096;
+	11: 10
+	12: 00
+	13: 00
