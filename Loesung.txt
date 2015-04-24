@@ -1,3 +1,14 @@
+## Makefiles
+
+2.)
+Sie werden auf die rechte seite der Bedingung gescvhrieben, damit der Compiler weiß, welche Systemheader er braucht. Sonst könnte es Befehle geben, die ernicht interpretieren kann.
+
+3.)
+Die Datei input.c wird auch mit in die Bedingung von main.o geschrieben, da auch diese Datei neu kompiliert werden muss, wenn sich in input.c etwas ändert.
+
+5.)
+Die "clean" bzw. "install" option wird nicht ausgeführt. Ein Makefile führt die Befehle nur aus, wenn die Datei links nicht existiert oder eine der Dateien rechts neuer ist als die Linke. Wenn es nun eine Datei mit dem Namen "install" oder "clean" existiert. Wird nach den nicht vorhandenen Abhängigkeiten geschaut. Also gibt es keinen Grund den Befehl auszuführen
+
 ## Datentypen, Speichermodell
 
 1. "Hello World!" wäre in Hexadezimal nach ASCII:
